@@ -1,0 +1,4 @@
+lab530:
+  db:
+    host: 192.168.1.121
+    database: blog-md2

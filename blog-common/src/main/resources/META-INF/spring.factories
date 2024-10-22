@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.lab530.common.config.MyBatisConfig,\
+  com.lab530.common.config.MvcConfig
