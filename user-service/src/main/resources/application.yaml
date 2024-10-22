@@ -1,0 +1,18 @@
+server:
+  port: 8084
+lab530:
+  db:
+    host: 192.168.1.121
+    database: blog-user
+  swagger:
+    title: lab530-blog-user接口文档
+    desc: lab530-blog-user接口文档
+    package: com.lab530.user.controller
+
+
+hm:
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m

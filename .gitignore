@@ -1,0 +1,6 @@
+/nacos/standalone-logs
+**/target
+/logs
+/data
+.idea
+blog.iml
