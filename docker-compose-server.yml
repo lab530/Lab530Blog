@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  gateway:
+    container_name: gateway
+    build:
+      context: ./blog-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - blog-network
+  md-service:
+    container_name: md-service
+    build:
+      context: ./md-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - blog-network
+  md2:
+    container_name: md2
+    build:
+      context: ./md2
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    networks:
+      - blog-network
+  user-service:
+    container_name: user-service
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    networks:
+      - blog-network
+
+
+networks:
+  blog-network:
+    driver: bridge

@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   mysql:
     build:
@@ -78,6 +77,4 @@ services:
 
 networks:
   middleware:
-    driver: bridge
-  blog_network:
     driver: bridge

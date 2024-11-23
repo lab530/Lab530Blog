@@ -1,0 +1,102 @@
+0,1,shared-jdbc.yaml,DEFAULT_GROUP,"","spring:
+  datasource:
+    url: jdbc:mysql://${hm.db.host:192.168.1.121}:${hm.db.port:53306}/${hm.db.database}?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${hm.db.user:root}
+    password: ${hm.db.pw:root}
+mybatis-plus:
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    db-config:
+      update-strategy: not_null
+      id-type: auto",d557ed5ee86578c69302b8790b1dbbd5,2024-10-16 14:39:52,2024-10-16 22:39:52,nacos,172.24.0.1,I,"",""
+0,2,shared-log.yaml,DEFAULT_GROUP,"","logging:
+  level:
+    com.lab530: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: ""logs/${spring.application.name}""",dd3607b0d31a1dcda560fb7592c0f203,2024-10-16 14:40:54,2024-10-16 22:40:54,nacos,172.24.0.1,I,"",""
+0,3,shared-swagger.yaml,DEFAULT_GROUP,"","knife4j:
+  enable: true
+  openapi:
+    title: ${hm:swagger.title:lab530-blog接口文档}
+    description: ${hm:swagger.desc:lab530-blog接口文档}
+    email: 3048586944@qq.com
+    concat: nianer
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - ${hm.swagger.package}",c6ffb9613ab5acf09c6ba32ca1e3535f,2024-10-16 14:44:12,2024-10-16 22:44:13,nacos,172.24.0.1,I,"",""
+1,4,shared-jdbc.yaml,DEFAULT_GROUP,"","spring:
+  datasource:
+    url: jdbc:mysql://${hm.db.host:192.168.1.121}:${hm.db.port:53306}/${hm.db.database}?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${hm.db.user:root}
+    password: ${hm.db.pw:root}
+mybatis-plus:
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    db-config:
+      update-strategy: not_null
+      id-type: auto",d557ed5ee86578c69302b8790b1dbbd5,2024-10-17 12:30:26,2024-10-17 20:30:26,nacos,172.24.0.1,U,"",""
+3,5,shared-swagger.yaml,DEFAULT_GROUP,"","knife4j:
+  enable: true
+  openapi:
+    title: ${hm:swagger.title:lab530-blog接口文档}
+    description: ${hm:swagger.desc:lab530-blog接口文档}
+    email: 3048586944@qq.com
+    concat: nianer
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - ${hm.swagger.package}",c6ffb9613ab5acf09c6ba32ca1e3535f,2024-10-17 12:43:17,2024-10-17 20:43:18,nacos,172.24.0.1,U,"",""
+0,6,gateway-route.json,DEFAULT_GROUP,"","[
+    {
+        ""id"": ""md"",
+        ""predicates"": [
+            {
+                ""name"": ""Path"",
+                ""args"": {
+                    ""_genkey_0"": ""/md/**""
+                }
+            }
+        ],
+        ""filters"": [],
+        ""uri"": ""lb://md-service""
+    },
+    {
+        ""id"": ""user"",
+        ""predicates"": [
+            {
+                ""name"": ""Path"",
+                ""args"": {
+                    ""_genkey_0"": ""/users/**""
+                }
+            }
+        ],
+        ""filters"": [],
+        ""uri"": ""lb://user-service""
+    },
+    {
+        ""id"": ""md2"",
+        ""predicates"": [
+            {
+                ""name"": ""Path"",
+                ""args"": {
+                    ""_genkey_0"": ""/md2/**""
+                }
+            }
+        ],
+        ""filters"": [],
+        ""uri"": ""lb://md2-service""
+    }
+]",7f7997ce0cc22125d1e994b51cb2e250,2024-10-18 07:21:06,2024-10-18 15:21:06,admin,172.24.0.1,I,"",""
